@@ -1,0 +1,49 @@
+/* Home コンポーネントのスタイル */
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    /* 画面全体の高さいっぱいに表示 */
+    background-color: #f0f0f0;
+    /* 背景色を灰色に設定 */
+    padding: 20px;
+    box-sizing: border-box;
+    /* パディングが要素のサイズに含まれるように */
+}
+
+.home-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+    /* テキストを中央に配置 */
+}
+
+.home-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    /* リンクを画面幅いっぱいに広げる */
+}
+
+/* リンクのスタイル */
+.home-link {
+    text-decoration: none;
+    color: #212121;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: 2px solid #3f51b5;
+    border-radius: 4px;
+    margin: 10px 0;
+    text-align: center;
+    /* テキストを中央に配置 */
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.home-link:hover {
+    background-color: #3f51b5;
+    color: white;
+    border-color: #3f51b5;
+}
