@@ -25,7 +25,10 @@ const useStyles = makeStyles((theme: Theme) =>
             maxWidth: 400,
             margin: "0 auto",
             padding: theme.spacing(2),
-        }
+        },
+        cardWithBorder: {
+            border: "1px solid #ccc", // 枠線のスタイル
+        },
     })
 );
 

@@ -8,7 +8,7 @@ import useStyles from './../style/Styles';
 const Home = () => {
     const classes = useStyles();
     return (
-        <form className={classes.container} noValidate autoComplete="off">
+        <form className={classes.container} noValidate autoComplete="on">
             <Card className={classes.card}>
                 <CardHeader className={classes.header} title="Welcome to 能登観光アプリ" />
                 <CardActions>

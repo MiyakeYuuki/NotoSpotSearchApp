@@ -232,7 +232,7 @@ const Login = () => {
                         variant="contained"
                         size="large"
                         color="primary"
-                        className={classes.loginBtn}
+                        className={classes.Btn}
                         onClick={handleLogin}
                         disabled={state.isButtonDisabled}
                     >

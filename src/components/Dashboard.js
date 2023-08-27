@@ -492,13 +492,18 @@ const Dashboard = () => {
 
                     <h2>検索結果</h2>
                     {!spotsExist ? (
-                        <p>該当するスポットはありません。</p>
+                        <p>該当するスポットはありません。<br />検索条件を変更して再度検索してください。</p>
                     ) : (
                         spots.map((spot) => (
-                            <Card key={spot.id} className={classes.spotCard}>
+                            <Card key={spot.id} className={`${classes.spotCard} ${classes.cardWithBorder}`}>
                                 <CardContent>
                                     <Typography variant="h6" className={classes.spotName}>
-                                        <strong>名前：{spot.name}</strong>
+                                        <strong>
+                                            名前：
+                                            <a href={spot.url} target="_blank" rel="noopener noreferrer">
+                                                {spot.name}
+                                            </a>
+                                        </strong>
                                     </Typography>
                                     <div className={classes.areaContainer}>
                                         エリア：
@@ -510,12 +515,11 @@ const Dashboard = () => {
                                             {spot.area}
                                         </Button>
                                     </div>
-                                    {/* <div className={classes.categoryContainer}> */}
                                     <Typography variant="body1" className={classes.categoryText}>
                                         カテゴリ：
                                         {spot.category
                                             .split(',')
-                                            .map((category, index) => category.trim())
+                                            .map((category) => category.trim())
                                             .filter(category => category !== "") // 空のカテゴリをフィルタリング
                                             .map((category, index) => (
                                                 <Button
@@ -523,16 +527,9 @@ const Dashboard = () => {
                                                     style={categoryButtonStyle}
                                                     key={index} className={classes.categoryButton}>
                                                     {category.trim()}
+                                                    {/* onClick={handleButtonClick} */}
                                                 </Button>
                                             ))}
-                                    </Typography>
-                                    {/* </div> */}
-                                    <Typography variant="body1" className={classes.urlText}>
-                                        HP：
-                                        <a href={spot.url} target="_blank" rel="noopener noreferrer">
-                                            {spot.url}
-                                        </a>
-
                                     </Typography>
                                 </CardContent>
                             </Card>

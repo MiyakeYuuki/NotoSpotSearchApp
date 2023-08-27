@@ -4,6 +4,15 @@ https://sample-firebase-ed3e4.web.app/
 ## 参考記事
 https://zenn.dev/masalib/books/2d6e8470732c8b/viewer/3d39ec
 
+## ToDo
+- 観光地データのフィールド見直し
+    - geopointの追加
+    - 詳細説明(text)の追加
+    - サムネイル画像の追加
+    - キーワード(配列)追加
+- 観光地検索結果をクリック -> 詳細画面に遷移
+- 観光地登録アプリの開発
+
 ## 補足
 1. `SDK の設定と構成`にdatabaseurlがない
 - FirebaseのRealtime Databaseを追加する
@@ -41,3 +50,4 @@ https://zenn.dev/masalib/books/2d6e8470732c8b/viewer/3d39ec
 
 ## 現存するエラー
 1. ログイン時にメアドとパスを入力→Enterを押すと"Uncaught runtime errors"が出てしまう
+

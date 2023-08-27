@@ -255,7 +255,7 @@ const Signup = () => {
                         variant="contained"
                         size="large"
                         color="primary"
-                        className={classes.signupBtn}
+                        className={classes.Btn}
                         onClick={handleSignup}
                         disabled={state.isButtonDisabled}
                     >

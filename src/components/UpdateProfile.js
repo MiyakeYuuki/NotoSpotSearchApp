@@ -1,25 +1,8 @@
 import React, { useState, useReducer, useEffect } from "react";
-//import { useForm } from "react-hook-form";
-import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import { Typography, Paper, Button, TextField } from "@material-ui/core";
-
+import useStyles from './../style/Styles';
 import { useAuth } from "../contexts/AuthContext";
 import { Link, useHistory } from "react-router-dom";
-
-const useStyles = makeStyles((theme: Theme) =>
-    createStyles({
-        container: {
-            padding: 16,
-            margin: "auto",
-            maxWidth: 480
-        },
-        signupBtn: {
-            marginTop: theme.spacing(2),
-            flexGrow: 1,
-            color: "primary"
-        }
-    })
-);
 
 //state type
 type State = {
@@ -349,7 +332,7 @@ const UpdateProfile = () => {
                         size="large"
                         fullWidth
                         color="primary"
-                        className={classes.signupBtn}
+                        className={classes.Btn}
                         onClick={handleUpdateProfile}
                         disabled={state.isButtonDisabled}
                     >
