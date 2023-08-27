@@ -1,16 +1,48 @@
 import React from 'react'
 import { Link } from "react-router-dom"
-import "../style/StyleHome.css"; // Dashboard.css をインポート
+import {
+    Card, Grid, CardActions, CardHeader, Button
+} from "@material-ui/core";
+import useStyles from './../style/Styles';
 
 const Home = () => {
+    const classes = useStyles();
     return (
-        <div className="home-container"> {/* home-container クラスを適用 */}
-            <div className="home-title">Welcome to 能登観光アプリ</div>
-            <div className="home-links"> {/* home-links クラスを適用 */}
-                <Link to="/login" className="home-link">Login</Link> {/* home-link クラスを適用 */}
-                <Link to="/signup" className="home-link">Signup</Link> {/* home-link クラスを適用 */}
-            </div>
-        </div>
+        <form className={classes.container} noValidate autoComplete="off">
+            <Card className={classes.card}>
+                <CardHeader className={classes.header} title="Welcome to 能登観光アプリ" />
+                <CardActions>
+                    <Grid container direction="column" alignItems="center">
+                        <br />
+                        すでにアカウントをお持ちの方はこちら
+                        <Button
+                            variant="contained"
+                            size="large"
+                            color="primary"
+                            className={classes.Btn}
+                            component={Link}
+                            to="/login"
+                            fullWidth
+                        >
+                            Login
+                        </Button>
+                        <br /><br />
+                        アカウントを新規作成する方はこちら
+                        <Button
+                            variant="contained"
+                            size="large"
+                            color="primary"
+                            className={classes.Btn}
+                            component={Link}
+                            to="/signup"
+                            fullWidth
+                        >
+                            Signup
+                        </Button>
+                    </Grid>
+                </CardActions>
+            </Card>
+        </form >
     )
 }
 

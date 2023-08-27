@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useHistory, Link } from "react-router-dom";
-import useStyles from './../style/Styles';
+import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import {
     TextField,
     Card,
@@ -27,6 +27,36 @@ import {
     endAt,
 } from "firebase/firestore";
 import fireStoreDB from "../firestore";
+// import "../style/StyleDashboard.css";
+
+const useStyles = makeStyles((theme: Theme) =>
+    createStyles({
+        container: {
+            display: "flex",
+            width: "100%", // 幅を100%に設定
+            margin: `${theme.spacing(0)} auto`,
+            flexDirection: "column", // レスポンシブに対応するためにカラム方向に変更
+        },
+        Btn: {
+            marginTop: theme.spacing(1),
+            flexGrow: 1,
+            width: "100%", // ボタンの幅を100%に設定
+        },
+        header: {
+            textAlign: "center",
+            background: "#212121",
+            color: "#fff",
+            padding: theme.spacing(2), // 余白を追加
+        },
+        card: {
+            width: "100%", // カードの幅を100%に設定
+            marginTop: theme.spacing(5),
+            maxWidth: 400, // 最大幅を設定
+            margin: "0 auto", // 中央寄せ
+            padding: theme.spacing(2), // 余白を追加
+        }
+    })
+);
 
 const Dashboard = () => {
     // デザイン変数
